@@ -1,16 +1,9 @@
 import {useState} from "react";
+import useToggle from "@/components/useToggle";
 
 export const HookExample = () => {
 
-    const useToggle = (initialValue: boolean): [boolean, (() => void), ((value: (((prevState: boolean) => boolean) | boolean)) => void)] => {
-        const [shown, setShown] = useState(initialValue)
-
-        const toggle = () => {
-            setShown(!shown)
-        }
-
-        return [shown, toggle, setShown];
-    }
+    const [x, tx, setX] = useToggle(false)
 
 
     return (

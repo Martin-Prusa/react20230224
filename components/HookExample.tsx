@@ -2,7 +2,7 @@ import {useState} from "react";
 
 export const HookExample = () => {
 
-    const useToggle = (initialValue: boolean) => {
+    const useToggle = (initialValue: boolean): [boolean, (() => void), ((value: (((prevState: boolean) => boolean) | boolean)) => void)] => {
         const [shown, setShown] = useState(initialValue)
 
         const toggle = () => {
